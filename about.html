@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — BRISK</title>
+  <meta name="description"
+    content="Learn about the mission, values, and vision behind BRISK: the trust-first digital marketplace standardizing local trade.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav-logo">
+          <img src="image/dark-green.png" alt="BRISK">
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="customers.html">For Customer</a></li>
+          <li><a href="traders.html">For Trader</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="help-desk.html">Help Desk</a></li>
+        </ul>
+        <div class="nav-actions" id="navActions">
+          <a href="#" class="btn btn-primary btn-register">Register</a>
+          <div class="qrcode-dropdown-wrapper">
+            <a href="javascript:void(0)" class="btn btn-secondary btn-qrcode" id="qrDropdownBtn">QR Code</a>
+            <div class="qrcode-popover" id="qrPopover" aria-hidden="true">
+              <button type="button" class="qrcode-popover-item" data-type="customer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                For Customer
+              </button>
+              <button type="button" class="qrcode-popover-item" data-type="trader">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                For Trader
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero section inner-hero" id="hero">
+    <div class="glow-bg glow-bg-primary hero-glow-1"></div>
+    <div class="glow-bg hero-glow-2"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left Content -->
+        <div class="hero-content reveal">
+          <div class="hero-tagline">
+            <span class="pulse"></span>
+            Our Identity
+          </div>
+          <h1>About <span class="gradient-text">BRISK</span></h1>
+          <p class="hero-desc">Building a structured, transparent, and governed digital marketplace where customers and
+            local traders interact with absolute confidence.</p>
+          <div class="btn-group">
+            <a href="#mission" class="btn btn-primary btn-lg">Our Mission</a>
+            <a href="#values" class="btn btn-secondary btn-lg">Our Values</a>
+          </div>
+        </div>
+
+        <!-- Right: Connected Particles Network (About) -->
+        <div class="hero-visual reveal reveal-d2" id="heroVisual">
+          <div class="abstract-visual-container about-visual-container">
+            <!-- Constellation mesh svg forming letter B -->
+            <svg class="particle-mesh-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <!-- Radial gradient for soft green glow behind the illustration -->
+                <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(9, 134, 66, 0.18)" />
+                  <stop offset="100%" stop-color="rgba(9, 134, 66, 0)" />
+                </radialGradient>
+
+                <!-- Linear gradient for active connections -->
+                <linearGradient id="activeLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#098642" />
+                  <stop offset="100%" stop-color="#0cc45a" />
+                </linearGradient>
+              </defs>
+
+              <!-- Radial glow backdrop -->
+              <circle cx="200" cy="200" r="180" fill="url(#greenGlow)" />
+
+              <!-- Cross/Mesh background connections (very faint) -->
+              <g stroke="rgba(9, 134, 66, 0.08)" stroke-width="1.2">
+                <!-- Top loop cross links -->
+                <line x1="130" y1="70" x2="250" y2="135" />
+                <line x1="130" y1="200" x2="190" y2="85" />
+                <line x1="130" y1="200" x2="250" y2="135" />
+
+                <!-- Bottom loop cross links -->
+                <line x1="130" y1="200" x2="265" y2="265" />
+                <line x1="130" y1="200" x2="190" y2="315" />
+                <line x1="130" y1="330" x2="265" y2="265" />
+
+                <!-- Inter-loop connector & waist -->
+                <line x1="250" y1="135" x2="265" y2="265" stroke-dasharray="2 3" />
+                <line x1="210" y1="180" x2="210" y2="220" />
+
+                <!-- Central vertical inner link -->
+                <line x1="190" y1="85" x2="190" y2="315" stroke-dasharray="4 4" stroke="rgba(9, 134, 66, 0.04)" />
+              </g>
+
+              <!-- Core B-Shape Static Paths -->
+              <g fill="none" stroke="rgba(9, 134, 66, 0.15)" stroke-width="1.5">
+                <!-- Backbone -->
+                <path d="M 130 70 L 130 330" />
+                <!-- Top Loop -->
+                <path d="M 130 70 C 180 50, 270 80, 250 135 C 235 175, 180 195, 130 200" />
+                <!-- Bottom Loop -->
+                <path d="M 130 200 C 180 195, 290 220, 265 265 C 245 310, 180 340, 130 330" />
+              </g>
+
+              <!-- Glowing animated paths traversing along the B-shape (acting as moving particles) -->
+              <g fill="none" stroke="url(#activeLineGrad)" stroke-width="2" stroke-linecap="round">
+                <!-- Backbone flow particle -->
+                <path d="M 130 70 L 130 330" stroke-dasharray="8 130" class="flow-path-fast" />
+                <!-- Top Loop flow particle -->
+                <path d="M 130 70 C 180 50, 270 80, 250 135 C 235 175, 180 195, 130 200" stroke-dasharray="10 185"
+                  class="flow-path-normal" />
+                <!-- Bottom Loop flow particle -->
+                <path d="M 130 200 C 180 195, 290 220, 265 265 C 245 310, 180 340, 130 330" stroke-dasharray="10 190"
+                  class="flow-path-slow" />
+              </g>
+            </svg>
+
+            <!-- Network Particle Nodes with labels forming the letter B -->
+            <!-- 1. Communication (Top Left) -->
+            <div class="network-particle-node" style="--top: 17.5%; --left: 32.5%; --delay: 0s;">
+              <div class="particle-dot"></div>
+              <span class="particle-label">Communication</span>
+            </div>
+            <!-- 2. Transparency (Top Middle) -->
+            <div class="network-particle-node" style="--top: 25.25%;--left: 56.5%;--delay: 0.3s;">
+              <div class="particle-dot"></div>
+              <span class="particle-label">Transparency</span>
+            </div>
+            <!-- 3. Verification (Top Right Peak) -->
+            <div class="network-particle-node" style="--top: 39.75%;--left: 61.5%;--delay: 0.6s;">
+              <div class="particle-dot"></div>
+              <span class="particle-label">Verification</span>
+            </div>
+            <!-- 4. Traders (Top Right Lower) -->
+            <!-- 5. Trust (Middle/Center Backbone Node) -->
+            <div class="network-particle-node" style="--top: 50%; --left: 32.5%; --delay: 0.1s;">
+              <div class="particle-dot pulse-strong"></div>
+              <span class="particle-label font-bold">Trust</span>
+            </div>
+            <!-- 6. Customers (Bottom Right Upper) -->
+            <div class="network-particle-node" style="--top: 55%; --left: 52.5%; --delay: 1.2s;">
+              <div class="particle-dot"></div>
+              <span class="particle-label">Customers</span>
+            </div>
+            <!-- 7. Security (Bottom Right Peak) -->
+            <div class="network-particle-node" style="--top: 66.25%; --left: 66.25%; --delay: 1.5s;">
+              <div class="particle-dot"></div>
+              <span class="particle-label">Security</span>
+            </div>
+            <!-- 8. Growth (Bottom Middle) -->
+            <div class="network-particle-node" style="--top: 84.75%;--left: 51.5%;--delay: 1.8s;">
+              <div class="particle-dot"></div>
+              <span class="particle-label">Growth</span>
+            </div>
+            <!-- 9. Marketplace (Bottom Left) -->
+            <div class="network-particle-node" style="--top: 82.5%; --left: 32.5%; --delay: 2.1s;">
+              <div class="particle-dot"></div>
+              <span class="particle-label">Marketplace</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: MISSION SECTION ===== -->
+  <section class="section" id="mission" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="split-journey-grid reveal">
+        <div style="display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+          <span class="section-label">Why We Exist</span>
+          <h2>The Local Services <span class="gradient-text">Challenge</span></h2>
+          <p>For decades, local services have remained deeply fragmented. Finding a reliable service provider felt like
+            a lottery, while pricing structures were opaque and agreements were handshakes with zero security.</p>
+          <p>BRISK was built to resolve this friction. By standardizing the communication flow, verifying participant
+            identities, and recording terms of engagement on a platform-governed database, we replace uncertainty with
+            trust.</p>
+        </div>
+        <div class="journey-card"
+          style="display:flex; flex-direction: column; justify-content: center; background: radial-gradient(circle, rgba(9, 134, 66, 0.04) 0%, transparent 100%);">
+          <h3 style="color: var(--primary); font-size: 1.5rem; line-height: 1.3;">"We are restructuring the trade
+            landscape, putting transparency at the core of every connection."</h3>
+          <p style="margin-top: 16px; font-weight: 500; color: var(--dark);">— The BRISK Team</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: VISION SECTION ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Our Vision</span>
+        <h2>A Trust-First <span class="gradient-text">Ecosystem</span></h2>
+        <p>We envision a community where customers and professional traders collaborate through mutual accountability
+          and structured workflows.</p>
+      </div>
+
+      <div class="support-grid reveal reveal-d2">
+        <div class="support-card">
+          <h4>Vetted Trade Network</h4>
+          <p>A marketplace with no rogue operators, where verified licensing and background checks are standard.</p>
+        </div>
+        <div class="support-card">
+          <h4>Protected Finances</h4>
+          <p>Structured budgets with locked milestones protect deposit payments and payout schedules.</p>
+        </div>
+        <div class="support-card">
+          <h4>Equitable Growth</h4>
+          <p>Honest feedback mechanisms that allow top quality local companies to thrive on authentic performance
+            results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: CORE VALUES ===== -->
+  <section class="section" id="values" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Core Values</span>
+        <h2>Our Founding <span class="gradient-text">Principles</span></h2>
+        <p>These core philosophies govern how we build, iterate, and run the BRISK network daily.</p>
+      </div>
+
+      <div class="bento-grid reveal reveal-d2">
+        <div class="bento-card reveal reveal-d1">
+          <div class="premium-border"></div>
+          <div class="bento-card-bg"></div>
+          <div class="bento-card-border"></div>
+          <h3>Trust</h3>
+          <p>We believe safety is not optional. Every piece of user identity, chat log, and feedback loop is protected
+            to secure trust.</p>
+        </div>
+
+        <div class="bento-card reveal reveal-d2">
+          <div class="premium-border"></div>
+          <div class="bento-card-bg"></div>
+          <div class="bento-card-border"></div>
+          <h3>Transparency</h3>
+          <p>Scope, milestones, quotes, and deadlines are transparently recorded, eliminating surprise costs or delayed
+            scopes.</p>
+        </div>
+
+        <div class="bento-card reveal reveal-d3">
+          <div class="premium-border"></div>
+          <div class="bento-card-bg"></div>
+          <div class="bento-card-border"></div>
+          <h3>Verification</h3>
+          <p>We perform active credentials checks, ensuring our trader pool represents authentic local industry
+            professionals.</p>
+        </div>
+
+        <div class="bento-card reveal reveal-d1">
+          <div class="premium-border"></div>
+          <div class="bento-card-bg"></div>
+          <div class="bento-card-border"></div>
+          <h3>Fair Negotiation</h3>
+          <p>No rigid pricing mechanisms. Traders bid, customers review, and scope is discussed directly in-app.</p>
+        </div>
+
+        <div class="bento-card reveal reveal-d2" style="grid-column: span 2;">
+          <div class="premium-border"></div>
+          <div class="bento-card-bg"></div>
+          <div class="bento-card-border"></div>
+          <h3>Community Growth</h3>
+          <p>We empower local services sectors to digitize their operations, receive verified credit, and expand their
+            client circles directly through structured feedback and reviews.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 8.2: FAQ ===== -->
+  <section class="faq-section section" id="faq" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Questions</span>
+        <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p>Find answers to common questions about the BRISK platform, trust architecture, and services.</p>
+      </div>
+
+      <div class="faq-container reveal reveal-d2">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is BRISK?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>BRISK is a trust-first, negotiation-driven digital marketplace connecting customers and local service
+                providers. Unlike simple noticeboards, we govern each transaction to ensure pricing is fair, terms are
+                documented, and both parties are protected.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the verification process work?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Every trader on BRISK undergoes background checks, license verification, reference audits, and
+                insurance validations by our dedicated team before they are allowed to submit quotes or bid on projects.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is it free to use BRISK?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Posting jobs and receiving quotes is 100% free for customers. For traders, we charge a small platform
+                commission fee only when contracts are successfully won and signed off.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does BRISK protect users from disputes?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>All client-trader negotiations, price agreements, and milestone checkpoints are recorded in-app,
+                establishing a platform-secured single source of truth. Structured completion sign-offs ensure traders
+                get paid on time and customers get the quality they agreed upon.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What types of services can I find on BRISK?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>You can find verified professionals across a variety of home improvement and service sectors, including
+                plumbing, electrical installations, painting, full renovations, landscaping, and masonry.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 8.5: TESTIMONIALS ===== -->
+  <section class="testimonials-section section" id="testimonials">
+    <!-- Decorative background elements as in the design -->
+    <div class="testi-bg-decor-left"></div>
+    <div class="testi-bg-decor-bottom"></div>
+
+    <div class="container">
+      <div class="testimonial-premium-showcase">
+        <div class="testimonial-showcase-grid">
+
+          <!-- Left Column: Navigation / Review List -->
+          <div class="testimonial-showcase-left">
+            <div class="review-title-group">
+              <span class="review-decor-line"></span>
+              <h3>Customer Reviews</h3>
+            </div>
+
+            <div class="avatar-arc-container">
+              <div class="avatar-list">
+                <!-- User 0 -->
+                <div class="avatar-item" data-index="0">
+                  <div class="avatar-img-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="width: 24px; height: 24px; color: var(--primary);">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <div class="avatar-details">
+                    <span class="avatar-name">Lauren Contreras</span>
+                    <span class="avatar-rating"><span class="star">★</span> 4.9 (Customer)</span>
+                  </div>
+                </div>
+
+                <!-- User 1 (Active) -->
+                <div class="avatar-item" data-index="1">
+                  <div class="avatar-img-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="width: 24px; height: 24px; color: #0cc45a;">
+                      <path
+                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                    </svg>
+                  </div>
+                  <div class="avatar-details">
+                    <span class="avatar-name">Edward Alexander</span>
+                    <span class="avatar-rating"><span class="star">★</span> 4.9 (Trader)</span>
+                  </div>
+                </div>
+
+                <!-- User 2 -->
+                <div class="avatar-item" data-index="2">
+                  <div class="avatar-img-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="width: 24px; height: 24px; color: #3b82f6;">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <div class="avatar-details">
+                    <span class="avatar-name">Diana Johnston</span>
+                    <span class="avatar-rating"><span class="star">★</span> 4.8 (Verified User)</span>
+                  </div>
+                </div>
+
+                <!-- User 3 -->
+                <div class="avatar-item" data-index="3">
+                  <div class="avatar-img-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="width: 24px; height: 24px; color: #8b5cf6;">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <div class="avatar-details">
+                    <span class="avatar-name">Sarah Jenkins</span>
+                    <span class="avatar-rating"><span class="star">★</span> 5.0 (Customer)</span>
+                  </div>
+                </div>
+
+                <!-- User 4 -->
+                <div class="avatar-item" data-index="4">
+                  <div class="avatar-img-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" style="width: 24px; height: 24px; color: #f59e0b;">
+                      <path
+                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                    </svg>
+                  </div>
+                  <div class="avatar-details">
+                    <span class="avatar-name">David Thorne</span>
+                    <span class="avatar-rating"><span class="star">★</span> 4.9 (Verified Trader)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Quotation Display -->
+          <div class="testimonial-showcase-right">
+            <span class="quotes-symbol">“</span>
+            <div class="quotes-content-wrapper">
+              <div class="quote-display-item" data-index="0">
+                <p class="display-quote-text">BRISK made it incredibly easy to compare offers and hire the right
+                  professional. The negotiation process was transparent and saved both time and money.</p>
+                <div class="quote-author-details">
+                  <span class="quote-author-name">Lauren Contreras</span>
+                  <span class="quote-author-role">Verified Customer</span>
+                </div>
+              </div>
+              <div class="quote-display-item" data-index="1">
+                <p class="display-quote-text">They have awesome customer service. I wouldn't recommend going to anyone
+                  else. All of you guys are awesome. Definitely love the way appscrip works</p>
+                <div class="quote-author-details">
+                  <span class="quote-author-name">Edward Alexander</span>
+                  <span class="quote-author-role">Verified Trader</span>
+                </div>
+              </div>
+              <div class="quote-display-item" data-index="2">
+                <p class="display-quote-text">As a registered trader, BRISK has completely changed how I win clients.
+                  The platform ensures my quotes are seen, and milestone payments protect my hard work.</p>
+                <div class="quote-author-details">
+                  <span class="quote-author-name">Diana Johnston</span>
+                  <span class="quote-author-role">Verified Business User</span>
+                </div>
+              </div>
+              <div class="quote-display-item" data-index="3">
+                <p class="display-quote-text">We use BRISK for our commercial facility maintenance. Being able to
+                  negotiate and lock terms with trusted professionals on one dashboard saves us hours of administrative
+                  work.</p>
+                <div class="quote-author-details">
+                  <span class="quote-author-name">Sarah Jenkins</span>
+                  <span class="quote-author-role">Facility Manager</span>
+                </div>
+              </div>
+              <div class="quote-display-item" data-index="4">
+                <p class="display-quote-text">The safety features on BRISK are top-notch. Being able to agree on
+                  milestone releases keeps our client-contractor relationship completely transparent.</p>
+                <div class="quote-author-details">
+                  <span class="quote-author-name">David Thorne</span>
+                  <span class="quote-author-role">Registered Builder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mobile dot navigation indicators -->
+        <div class="mobile-slider-indicators">
+          <span class="mobile-indicator-dot" data-slide="0"></span>
+          <span class="mobile-indicator-dot" data-slide="1"></span>
+          <span class="mobile-indicator-dot" data-slide="2"></span>
+          <span class="mobile-indicator-dot" data-slide="3"></span>
+          <span class="mobile-indicator-dot" data-slide="4"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index-v2.html" class="footer-logo">
+            <img src="image/white.png" alt="BRISK">
+          </a>
+          <p>A trust-first, negotiation-driven marketplace connecting customers with verified local service providers.
+          </p>
+          <br>
+          <div class="footer-socials ">
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+              </svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index-v2.html">Home 2</a></li>
+            <li><a href="customers.html">For Customer</a></li>
+            <li><a href="traders.html">For Trader</a></li>
+            <li><a href="blog.html">Blog & Insights</a></li>
+            <li><a href="help-desk.html">Help Desk</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="customers.html#post-job">Post A Job</a></li>
+            <li><a href="traders.html#browse-jobs">Browse Traders</a></li>
+            <li><a href="index-v2.html#flow">Marketplace Flow</a></li>
+            <li><a href="help-desk.html#trader-verification">Trust & Safety</a></li>
+            <li><a href="help-desk.html#escrow-protection">Escrow Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="help-desk.html">Help Centre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 BRISK. All rights reserved.</p>
+
+      </div>
+    </div>
+  </footer>
+  <!-- ===== QR CODE MODAL ===== -->
+  <div class="qr-modal-overlay" id="qrModalOverlay" aria-hidden="true">
+    <div class="qr-modal-card" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+      <button type="button" class="qr-modal-close" id="qrModalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="qr-modal-header">
+        <h3 class="qr-modal-title" id="qrModalTitle">Customer App Download</h3>
+        <p class="qr-modal-subtitle">Scan the QR code to download the app.</p>
+      </div>
+      <div class="qr-cards-grid">
+        <!-- App Store Card -->
+        <div class="qr-app-card">
+          <div class="qr-card-header">
+            <svg class="qr-app-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.66-.8 1.11-1.92.99-3.04-.96.04-2.13.64-2.82 1.44-.61.71-1.14 1.86-.99 2.97 1.07.08 2.16-.56 2.82-1.37z" />
+            </svg>
+            <span class="qr-card-title">App Store</span>
+          </div>
+          <div class="qr-image-wrapper">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-customer"
+              id="appStoreQrImg" alt="App Store QR Code">
+          </div>
+        </div>
+        <!-- Google Play Card -->
+        <div class="qr-app-card">
+          <div class="qr-card-header">
+            <svg class="qr-app-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.31 0 .61.09.86.26l14.1 8.5c.67.4 1.04 1.13 1.04 1.89s-.37 1.49-1.04 1.89l-14.1 8.5c-.25.17-.55.26-.86.26-.83 0-1.5-.67-1.5-1.5z" />
+            </svg>
+            <span class="qr-card-title">Google Play</span>
+          </div>
+          <div class="qr-image-wrapper">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.customer"
+              id="googlePlayQrImg" alt="Google Play QR Code">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // QR Code Dropdown Popover & Modal Logic
+    document.addEventListener('DOMContentLoaded', function () {
+      const qrDropdownBtn = document.getElementById('qrDropdownBtn');
+      const qrPopover = document.getElementById('qrPopover');
+      const qrModalOverlay = document.getElementById('qrModalOverlay');
+      const qrModalClose = document.getElementById('qrModalClose');
+      const qrModalTitle = document.getElementById('qrModalTitle');
+      const appStoreQrImg = document.getElementById('appStoreQrImg');
+      const googlePlayQrImg = document.getElementById('googlePlayQrImg');
+
+      if (!qrDropdownBtn || !qrPopover || !qrModalOverlay) return;
+
+      // Toggle Popover
+      qrDropdownBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        qrPopover.classList.toggle('active');
+      });
+
+      // Close Popover when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!qrPopover.contains(e.target) && !qrDropdownBtn.contains(e.target)) {
+          qrPopover.classList.remove('active');
+        }
+      });
+
+      // Handle Option Selection
+      const popoverItems = qrPopover.querySelectorAll('.qrcode-popover-item');
+      popoverItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          const type = this.getAttribute('data-type');
+
+          if (type === 'trader') {
+            qrModalTitle.textContent = 'Trader App Download';
+            appStoreQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-trader';
+            googlePlayQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.trader';
+          } else {
+            qrModalTitle.textContent = 'Customer App Download';
+            appStoreQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-customer';
+            googlePlayQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.customer';
+          }
+
+          qrPopover.classList.remove('active');
+          openModal();
+        });
+      });
+
+      function openModal() {
+        qrModalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        qrModalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (qrModalClose) {
+        qrModalClose.addEventListener('click', closeModal);
+      }
+
+      qrModalOverlay.addEventListener('click', function (e) {
+        if (e.target === qrModalOverlay) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && qrModalOverlay.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+  <script>
+    // ===== Sticky Header =====
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ===== Mobile Nav Toggle =====
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navActions = document.getElementById('navActions');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      navActions.classList.toggle('active');
+    });
+
+    // ===== Scroll Reveal =====
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ===== Testimonials Showcase (SaaS Orbital Layout) Logic =====
+    const avatarItems = document.querySelectorAll('.avatar-item');
+    const quoteItems = document.querySelectorAll('.quote-display-item');
+    const mobileDots = document.querySelectorAll('.mobile-indicator-dot');
+    let activeTestiIndex = 1; // Default active center card (Edward Alexander)
+    let autoRotateInterval;
+
+    function renderTestimonialPositions() {
+      if (avatarItems.length === 0) return;
+
+      avatarItems.forEach((item, index) => {
+        // Calculate the relative offset index from the active card
+        // diff maps to 0 (active), 1 (bottom), 2 (hidden bottom), 3 (hidden top), 4 (top)
+        const diff = (index - activeTestiIndex + 5) % 5;
+
+        // Remove existing class position names
+        item.classList.remove('pos-hidden-top', 'pos-top', 'pos-active', 'pos-bottom', 'pos-hidden-bottom');
+
+        // Map relative offset to CSS class positions
+        if (diff === 0) {
+          item.classList.add('pos-active');
+        } else if (diff === 1) {
+          item.classList.add('pos-bottom');
+        } else if (diff === 2) {
+          item.classList.add('pos-hidden-bottom');
+        } else if (diff === 3) {
+          item.classList.add('pos-hidden-top');
+        } else if (diff === 4) {
+          item.classList.add('pos-top');
+        }
+      });
+
+      // Update the quote displays (fade transition active states)
+      quoteItems.forEach((quote, index) => {
+        if (index === activeTestiIndex) {
+          quote.classList.add('active');
+        } else {
+          quote.classList.remove('active');
+        }
+      });
+
+      // Update mobile indicators dots active states
+      mobileDots.forEach((dot, index) => {
+        if (index === activeTestiIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function selectTestimonial(index) {
+      activeTestiIndex = (index + avatarItems.length) % avatarItems.length;
+      renderTestimonialPositions();
+    }
+
+    function rotateTestimonials() {
+      selectTestimonial(activeTestiIndex + 1);
+    }
+
+    function startTestiAutoRotate() {
+      autoRotateInterval = setInterval(rotateTestimonials, 5000);
+    }
+
+    function stopTestiAutoRotate() {
+      clearInterval(autoRotateInterval);
+    }
+
+    // Attach click listeners to cards for user selection
+    avatarItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        selectTestimonial(index);
+        stopTestiAutoRotate();
+        startTestiAutoRotate();
+      });
+    });
+
+    // Attach click listeners to mobile navigation dots
+    mobileDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        selectTestimonial(index);
+        stopTestiAutoRotate();
+        startTestiAutoRotate();
+      });
+    });
+
+    // Pause on hover
+    const premiumShowcase = document.querySelector('.testimonial-premium-showcase');
+    if (premiumShowcase) {
+      premiumShowcase.addEventListener('mouseenter', stopTestiAutoRotate);
+      premiumShowcase.addEventListener('mouseleave', startTestiAutoRotate);
+    }
+
+    // Initialize layout positions
+    renderTestimonialPositions();
+    startTestiAutoRotate();
+
+    // ===== FAQ Accordion Logic =====
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

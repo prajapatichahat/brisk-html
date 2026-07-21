@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Desk & Knowledge Base — BRISK</title>
+  <meta name="description"
+    content="Explore BRISK Help Desk & Knowledge Base to understand local trade dynamics, economy overview, industry insights, and support systems.">
+
+  <!-- Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+  <style>
+    /* Help Desk Specific Sticky Scroll Section Styles */
+    .help-desk-hero {
+      padding: 120px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #F4FAF6 0%, #FFFFFF 100%);
+    }
+
+    .help-desk-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--dark, #0B192C);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .help-desk-hero p {
+      font-size: 1.125rem;
+      color: var(--text-light, #64748B);
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+
+    /* Sticky Scroll Container */
+    .sticky-scroll-section {
+      padding: 60px 0 100px;
+      position: relative;
+    }
+
+    .sticky-layout {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    /* Left Navigation Sidebar (30%) */
+    .sticky-sidebar {
+      flex: 0 0 30%;
+      width: 30%;
+      position: sticky;
+      top: 100px;
+      /* Sticky offset accounting for fixed header */
+      z-index: 10;
+      transition: top 0.3s ease;
+    }
+
+    .sticky-menu-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border-light, #E2E8F0);
+    }
+
+    .sticky-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sticky-menu-link {
+      display: block;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark, #1E293B);
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .sticky-menu-link:hover {
+      background: var(--primary-bg, #E8F5E9);
+      color: var(--primary, #098642);
+      transform: translateX(4px);
+    }
+
+    .sticky-menu-link.active {
+      background: var(--primary, #098642);
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(9, 134, 66, 0.3);
+      transform: translateX(0);
+    }
+
+    /* Promotional CTA Card under Left Menu */
+    .promo-card {
+      margin-top: 24px;
+      background: linear-gradient(135deg, #F4FAF6 0%, #E8F5E9 100%);
+      border: 1px solid var(--primary-border, #C8E6C9);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .promo-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0B192C;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .promo-card .btn-promo {
+      display: inline-block;
+      width: 100%;
+      padding: 12px 20px;
+      background: var(--primary, #098642);
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+      border: none;
+    }
+
+    .promo-card .btn-promo:hover {
+      background: var(--primary-dark, #076a34);
+      transform: translateY(-2px);
+    }
+
+    /* Right Content Wrapper (70%) */
+    .sticky-content {
+      flex: 0 0 70%;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 90px;
+      /* Spacing between 80-100px */
+    }
+
+    /* Content Section Item */
+    .content-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      scroll-margin-top: 110px;
+      /* Offset for smooth scroll */
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    /* First section is visible immediately on page load */
+    .content-section:first-of-type,
+    .content-section.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .content-section h2 {
+      font-size: 2.125rem;
+      font-weight: 800;
+      color: var(--dark, #0B192C);
+      margin-bottom: 18px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .content-section p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-light, #475569);
+      margin: 0;
+    }
+
+    .section-image-col {
+      position: relative;
+    }
+
+    .section-image-card {
+      background: #F8FAFC;
+      border-radius: 24px;
+      padding: 16px;
+      border: 1px solid var(--border-light, #E2E8F0);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-image-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .content-section.in-view .section-image-card img {
+      transform: scale(1.03);
+    }
+
+    /* Tablet & Responsive Media Queries */
+    @media (max-width: 991px) {
+      .sticky-layout {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .sticky-sidebar {
+        flex: 0 0 100%;
+        width: 100%;
+        position: sticky;
+        top: 70px;
+        z-index: 100;
+      }
+
+      .sticky-menu-card {
+        padding: 12px;
+        border-radius: 12px;
+      }
+
+      /* Horizontal Scrollable Tabs on Mobile/Tablet */
+      .sticky-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+      }
+
+      .sticky-menu::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+      }
+
+      .sticky-menu-link {
+        padding: 10px 16px;
+        font-size: 0.875rem;
+      }
+
+      .sticky-menu-link:hover {
+        transform: none;
+      }
+
+      .promo-card {
+        display: none;
+        /* Hide promo card on tablet/mobile left nav to preserve space */
+      }
+
+      .sticky-content {
+        flex: 0 0 100%;
+        width: 100%;
+        gap: 60px;
+      }
+
+      .content-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .section-image-card img {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .help-desk-hero {
+        padding: 90px 0 40px;
+      }
+
+      .help-desk-hero h1 {
+        font-size: 1.85rem;
+      }
+
+      .help-desk-hero p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+
+      .sticky-scroll-section {
+        padding: 30px 0 60px;
+      }
+
+      .content-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .content-section p {
+        font-size: 0.95rem;
+      }
+
+      .section-image-card {
+        padding: 10px;
+        border-radius: 16px;
+      }
+
+      .section-image-card img {
+        height: 200px;
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav-logo">
+          <img src="image/dark-green.png" alt="BRISK">
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="customers.html">For Customer</a></li>
+          <li><a href="traders.html">For Trader</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="help-desk.html" class="active">Help Desk</a></li>
+        </ul>
+        <div class="nav-actions" id="navActions">
+          <a href="#" class="btn btn-primary btn-register">Register</a>
+          <div class="qrcode-dropdown-wrapper">
+            <a href="javascript:void(0)" class="btn btn-secondary btn-qrcode" id="qrDropdownBtn">QR Code</a>
+            <div class="qrcode-popover" id="qrPopover" aria-hidden="true">
+              <button type="button" class="qrcode-popover-item" data-type="customer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                For Customer
+              </button>
+              <button type="button" class="qrcode-popover-item" data-type="trader">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                For Trader
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HELP DESK HERO ===== -->
+  <section class="help-desk-hero">
+    <div class="glow-bg glow-bg-primary hero-glow-1"></div>
+    <div class="container">
+      <h1>Help Desk & <span class="gradient-text">Platform Guides</span></h1>
+      <p>Everything you need to know about posting jobs, negotiating quotes, securing payments, and building trust on
+        BRISK.</p>
+    </div>
+  </section>
+
+  <!-- ===== STICKY SCROLL SECTION ===== -->
+  <section class="sticky-scroll-section">
+    <div class="container">
+      <div class="sticky-layout">
+
+        <!-- Left Navigation (30%) -->
+        <aside class="sticky-sidebar" aria-label="Help Desk Navigation">
+          <div class="sticky-menu-card">
+            <ul class="sticky-menu" id="stickyNav" role="tablist">
+              <li>
+                <a href="#how-brisk-works" class="sticky-menu-link active" data-target="how-brisk-works"
+                  aria-current="true" role="tab">
+                  How BRISK Works
+                </a>
+              </li>
+              <li>
+                <a href="#trader-verification" class="sticky-menu-link" data-target="trader-verification"
+                  aria-current="false" role="tab">
+                  Trader Verification
+                </a>
+              </li>
+              <li>
+                <a href="#smart-milestones" class="sticky-menu-link" data-target="smart-milestones" aria-current="false"
+                  role="tab">
+                  Smart Milestones
+                </a>
+              </li>
+              <li>
+                <a href="#escrow-protection" class="sticky-menu-link" data-target="escrow-protection"
+                  aria-current="false" role="tab">
+                  Escrow Protection
+                </a>
+              </li>
+              <li>
+                <a href="#dispute-resolution" class="sticky-menu-link" data-target="dispute-resolution"
+                  aria-current="false" role="tab">
+                  Dispute Resolution
+                </a>
+              </li>
+              <li>
+                <a href="#trader-growth-hub" class="sticky-menu-link" data-target="trader-growth-hub"
+                  aria-current="false" role="tab">
+                  Trader Growth Hub
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Promo Card -->
+          <div class="promo-card">
+            <h4>Ready to experience effortless local trade?</h4>
+            <a href="contact.html" class="btn-promo">Get Started Today</a>
+          </div>
+        </aside>
+
+        <!-- Right Content Area (70%) -->
+        <main class="sticky-content">
+
+          <!-- 1. How BRISK Works -->
+          <section id="how-brisk-works" class="content-section" aria-labelledby="heading-how-brisk-works">
+            <div class="section-text-col">
+              <h2 id="heading-how-brisk-works">How BRISK Works</h2>
+              <p>BRISK simplifies local services into a transparent 6-step flow. Customers post job requirements with
+                photos and timeline, while verified local traders send tailored offers and negotiate scope seamlessly
+                within the platform.</p>
+            </div>
+            <div class="section-image-col">
+              <div class="section-image-card">
+                <img src="image/Home.png" alt="BRISK Marketplace Flow Overview">
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Trader Verification -->
+          <section id="trader-verification" class="content-section" aria-labelledby="heading-trader-verification">
+            <div class="section-text-col">
+              <h2 id="heading-trader-verification">Trader Verification</h2>
+              <p>Trust starts with verified credentials. Every trade professional on BRISK undergoes identity
+                verification, business licensing checks, and insurance audits before bidding on customer jobs.</p>
+            </div>
+            <div class="section-image-col">
+              <div class="section-image-card">
+                <img src="image/trader_dashboard.png" alt="BRISK Trader Dashboard & Badges">
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Smart Milestones -->
+          <section id="smart-milestones" class="content-section" aria-labelledby="heading-smart-milestones">
+            <div class="section-text-col">
+              <h2 id="heading-smart-milestones">Smart Milestones</h2>
+              <p>Break complex jobs into clear, manageable milestone deliverables. Funds are agreed upfront and released
+                only when work phases are completed and verified by the customer.</p>
+            </div>
+            <div class="section-image-col">
+              <div class="section-image-card">
+                <img src="image/customer_dashboard.png" alt="BRISK Customer Dashboard & Milestones">
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Escrow Protection -->
+          <section id="escrow-protection" class="content-section" aria-labelledby="heading-escrow-protection">
+            <div class="section-text-col">
+              <h2 id="heading-escrow-protection">Escrow Payment Security</h2>
+              <p>Protect your capital with BRISK Escrow. Customers know their money is safe until work meets agreed
+                standards, and traders get guaranteed payout certainty upon job completion.</p>
+            </div>
+            <div class="section-image-col">
+              <div class="section-image-card">
+                <img src="image/Frame.png" alt="BRISK Secure Escrow System">
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. Dispute Resolution -->
+          <section id="dispute-resolution" class="content-section" aria-labelledby="heading-dispute-resolution">
+            <div class="section-text-col">
+              <h2 id="heading-dispute-resolution">Dispute Resolution</h2>
+              <p>Our dedicated resolution desk steps in whenever scope or quality disagreements arise. With complete
+                audit trails of messages and milestones, fair resolutions are reached quickly.</p>
+            </div>
+            <div class="section-image-col">
+              <div class="section-image-card">
+                <img src="image/blog.png" alt="BRISK Support & Dispute Resolution">
+              </div>
+            </div>
+          </section>
+
+          <!-- 6. Trader Growth Hub -->
+          <section id="trader-growth-hub" class="content-section" aria-labelledby="heading-trader-growth-hub">
+            <div class="section-text-col">
+              <h2 id="heading-trader-growth-hub">Trader Growth Hub</h2>
+              <p>Expand your business with automated lead matching, instant client messaging, electronic invoicing, and
+                performance analytics to build a top-rated reputation in your local community.</p>
+            </div>
+            <div class="section-image-col">
+              <div class="section-image-card">
+                <img src="image/Home.png" alt="BRISK Trader Growth Tools">
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index-v2.html" class="footer-logo">
+            <img src="image/white.png" alt="BRISK">
+          </a>
+          <p>A trust-first, negotiation-driven marketplace connecting customers with verified local service providers.
+          </p>
+          <br>
+          <div class="footer-socials ">
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+              </svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index-v2.html">Home 2</a></li>
+            <li><a href="customers.html">For Customer</a></li>
+            <li><a href="traders.html">For Trader</a></li>
+            <li><a href="blog.html">Blog & Insights</a></li>
+            <li><a href="help-desk.html">Help Desk</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="customers.html#post-job">Post A Job</a></li>
+            <li><a href="traders.html#browse-jobs">Browse Traders</a></li>
+            <li><a href="index-v2.html#flow">Marketplace Flow</a></li>
+            <li><a href="help-desk.html#trader-verification">Trust & Safety</a></li>
+            <li><a href="help-desk.html#escrow-protection">Escrow Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="help-desk.html">Help Centre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 BRISK. All rights reserved.</p>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== QR CODE MODAL ===== -->
+  <div class="qr-modal-overlay" id="qrModalOverlay" aria-hidden="true">
+    <div class="qr-modal-card" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+      <button type="button" class="qr-modal-close" id="qrModalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="qr-modal-header">
+        <h3 class="qr-modal-title" id="qrModalTitle">Customer App Download</h3>
+        <p class="qr-modal-subtitle">Scan the QR code to download the app.</p>
+      </div>
+      <div class="qr-cards-grid">
+        <!-- App Store Card -->
+        <div class="qr-app-card">
+          <div class="qr-card-header">
+            <svg class="qr-app-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.66-.8 1.11-1.92.99-3.04-.96.04-2.13.64-2.82 1.44-.61.71-1.14 1.86-.99 2.97 1.07.08 2.16-.56 2.82-1.37z" />
+            </svg>
+            <span class="qr-card-title">App Store</span>
+          </div>
+          <div class="qr-image-wrapper">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-customer"
+              id="appStoreQrImg" alt="App Store QR Code">
+          </div>
+        </div>
+        <!-- Google Play Card -->
+        <div class="qr-app-card">
+          <div class="qr-card-header">
+            <svg class="qr-app-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.31 0 .61.09.86.26l14.1 8.5c.67.4 1.04 1.13 1.04 1.89s-.37 1.49-1.04 1.89l-14.1 8.5c-.25.17-.55.26-.86.26-.83 0-1.5-.67-1.5-1.5z" />
+            </svg>
+            <span class="qr-card-title">Google Play</span>
+          </div>
+          <div class="qr-image-wrapper">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.customer"
+              id="googlePlayQrImg" alt="Google Play QR Code">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ===== Sticky Header =====
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+      });
+
+      // ===== Mobile Nav =====
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      const navActions = document.getElementById('navActions');
+
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        navActions.classList.toggle('active');
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+          navActions.classList.remove('active');
+        });
+      });
+      // 3. STICKY SCROLL NAVIGATION & INTERSECTION OBSERVER
+      const menuLinks = document.querySelectorAll('.sticky-menu-link');
+      const sections = document.querySelectorAll('.content-section');
+      const headerOffset = 110; // Sticky header offset height
+
+      // Function to set active menu item & update accessibility attributes
+      function setActiveMenuItem(targetId) {
+        menuLinks.forEach(link => {
+          const isMatch = link.getAttribute('data-target') === targetId;
+          if (isMatch) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'true');
+            // Auto scroll active link into view for mobile horizontal menu
+            link.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+          } else {
+            link.classList.remove('active');
+            link.setAttribute('aria-current', 'false');
+          }
+        });
+      }
+
+      // IntersectionObserver for Scroll Spy & Reveal Animation
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -50% 0px', // Center viewport focus
+        threshold: 0.1
+      };
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Fade Up & Scale-in entrance animation
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+
+            // Activate corresponding menu link
+            const id = entry.target.getAttribute('id');
+            if (id) {
+              setActiveMenuItem(id);
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Observe each section
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+      });
+
+      // Smooth scroll on menu item click
+      menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('data-target');
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+            const elementPosition = targetSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+
+            // Update active state immediately on click
+            setActiveMenuItem(targetId);
+
+            // Update URL hash without page jump
+            if (history.pushState) {
+              history.pushState(null, null, `#${targetId}`);
+            } else {
+              location.hash = `#${targetId}`;
+            }
+          }
+        });
+      });
+
+      // QR Code Dropdown Popover & Modal Logic
+
+      const qrDropdownBtn = document.getElementById('qrDropdownBtn');
+      const qrPopover = document.getElementById('qrPopover');
+      const qrModalOverlay = document.getElementById('qrModalOverlay');
+      const qrModalClose = document.getElementById('qrModalClose');
+      const qrModalTitle = document.getElementById('qrModalTitle');
+      const appStoreQrImg = document.getElementById('appStoreQrImg');
+      const googlePlayQrImg = document.getElementById('googlePlayQrImg');
+
+      if (!qrDropdownBtn || !qrPopover || !qrModalOverlay) return;
+
+      // Toggle Popover
+      qrDropdownBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        qrPopover.classList.toggle('active');
+      });
+
+      // Close Popover when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!qrPopover.contains(e.target) && !qrDropdownBtn.contains(e.target)) {
+          qrPopover.classList.remove('active');
+        }
+      });
+
+      // Handle Option Selection
+      const popoverItems = qrPopover.querySelectorAll('.qrcode-popover-item');
+      popoverItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          const type = this.getAttribute('data-type');
+
+          if (type === 'trader') {
+            qrModalTitle.textContent = 'Trader App Download';
+            appStoreQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-trader';
+            googlePlayQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.trader';
+          } else {
+            qrModalTitle.textContent = 'Customer App Download';
+            appStoreQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-customer';
+            googlePlayQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.customer';
+          }
+
+          qrPopover.classList.remove('active');
+          openModal();
+        });
+      });
+
+      function openModal() {
+        qrModalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        qrModalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (qrModalClose) {
+        qrModalClose.addEventListener('click', closeModal);
+      }
+
+      qrModalOverlay.addEventListener('click', function (e) {
+        if (e.target === qrModalOverlay) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && qrModalOverlay.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

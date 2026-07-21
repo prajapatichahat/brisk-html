@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — BRISK</title>
+  <meta name="description"
+    content="Get in touch with the BRISK customer support, trader relations, or partnership teams. Submit a query via our form.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav-logo">
+          <img src="image/dark-green.png" alt="BRISK">
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="customers.html">For Customer</a></li>
+          <li><a href="traders.html">For Trader</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="help-desk.html">Help Desk</a></li>
+        </ul>
+        <div class="nav-actions" id="navActions">
+          <a href="#" class="btn btn-primary btn-register">Register</a>
+          <div class="qrcode-dropdown-wrapper">
+            <a href="javascript:void(0)" class="btn btn-secondary btn-qrcode" id="qrDropdownBtn">QR Code</a>
+            <div class="qrcode-popover" id="qrPopover" aria-hidden="true">
+              <button type="button" class="qrcode-popover-item" data-type="customer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                For Customer
+              </button>
+              <button type="button" class="qrcode-popover-item" data-type="trader">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                For Trader
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero section inner-hero" id="hero">
+    <div class="glow-bg glow-bg-primary hero-glow-1"></div>
+    <div class="glow-bg hero-glow-2"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left Column: Content -->
+        <div class="hero-content reveal">
+          <div class="hero-tagline">
+            <span class="pulse"></span>
+            Get In Touch
+          </div>
+          <h1>Contact <span class="gradient-text">BRISK</span></h1>
+          <p class="hero-desc">We're here to help. Reach out with questions, feedback, or support requests and our team
+            will get back to you shortly.</p>
+          <div class="btn-group">
+            <a href="#contactForm" class="btn btn-primary btn-lg">Send Message</a>
+            <a href="#help-desks" class="btn btn-secondary btn-lg">Support Channels</a>
+          </div>
+        </div>
+
+        <!-- Right Column: Minimalist Premium Scene -->
+        <div class="hero-visual reveal reveal-d2" id="heroVisual">
+          <div class="abstract-visual-container">
+            <!-- Communication Hub Visual -->
+            <div class="comm-hub-visual">
+
+              <!-- SVG Connection Lines -->
+              <svg class="comm-lines-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <!-- Green gradient for animated paths -->
+                  <linearGradient id="comm-line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.1" />
+                    <stop offset="50%" stop-color="#0cc45a" stop-opacity="1" />
+                    <stop offset="100%" stop-color="var(--primary)" stop-opacity="0.1" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Connection paths (curved bezier lines from elements to center) -->
+                <!-- Center is at (200, 200) -->
+                <path class="comm-path" d="M 90 90 Q 150 120, 200 200" />
+                <path class="comm-path-animated" d="M 90 90 Q 150 120, 200 200" style="--delay: 0s;" />
+
+                <path class="comm-path" d="M 310 90 Q 250 120, 200 200" />
+                <path class="comm-path-animated" d="M 310 90 Q 250 120, 200 200" style="--delay: 1.5s;" />
+
+                <path class="comm-path" d="M 330 210 Q 260 210, 200 200" />
+                <path class="comm-path-animated" d="M 330 210 Q 260 210, 200 200" style="--delay: 3s;" />
+
+                <path class="comm-path" d="M 290 310 Q 240 270, 200 200" />
+                <path class="comm-path-animated" d="M 290 310 Q 240 270, 200 200" style="--delay: 0.7s;" />
+
+                <path class="comm-path" d="M 110 310 Q 160 270, 200 200" />
+                <path class="comm-path-animated" d="M 110 310 Q 160 270, 200 200" style="--delay: 2.2s;" />
+
+                <path class="comm-path" d="M 70 210 Q 140 210, 200 200" />
+                <path class="comm-path-animated" d="M 70 210 Q 140 210, 200 200" style="--delay: 1.1s;" />
+              </svg>
+
+              <!-- Central Attractor Node (BRISK Logo) -->
+              <div class="comm-center-node">
+                <div class="comm-center-glow"></div>
+                <img src="image/dark-green.png" alt="BRISK">
+              </div>
+
+              <!-- Floating Communication Nodes (Icons) -->
+              <!-- 1. Chat Message Bubble -->
+              <div class="comm-node node-chat" style="--top: 22.5%; --left: 22.5%; --delay: 0s;">
+                <div class="comm-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                </div>
+                <span class="comm-node-label">Chat Support</span>
+              </div>
+
+              <!-- 2. Email Envelope -->
+              <div class="comm-node node-email" style="--top: 22.5%; --left: 77.5%; --delay: 1.5s;">
+                <div class="comm-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <span class="comm-node-label">Email Enquiries</span>
+              </div>
+
+              <!-- 3. Phone Receiver -->
+              <div class="comm-node node-phone" style="--top: 52.5%; --left: 82.5%; --delay: 3s;">
+                <div class="comm-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <span class="comm-node-label">Phone Hotline</span>
+              </div>
+
+              <!-- 4. Support Headset -->
+              <div class="comm-node node-headset" style="--top: 77.5%; --left: 72.5%; --delay: 0.7s;">
+                <div class="comm-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                    <path
+                      d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                  </svg>
+                </div>
+                <span class="comm-node-label">Trader Desk</span>
+              </div>
+
+              <!-- 5. Location Pin -->
+              <div class="comm-node node-location" style="--top: 77.5%; --left: 27.5%; --delay: 2.2s;">
+                <div class="comm-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <span class="comm-node-label">HQ Office</span>
+              </div>
+
+              <!-- 6. Notification Dot / Message Bubble -->
+              <div class="comm-node node-notif" style="--top: 52.5%; --left: 17.5%; --delay: 1.1s;">
+                <div class="comm-node-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                  </svg>
+                </div>
+                <span class="comm-node-label">Live Status</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: CONTACT LAYOUT ===== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="contact-container reveal reveal-d1">
+
+        <!-- Left: Contact Information -->
+        <div class="contact-info-card">
+          <span class="section-label">Connect</span>
+          <h3 style="margin-top: 12px;">Contact Information</h3>
+          <p style="margin-top: 8px;">Direct contact options for general business enquiries.</p>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <h5>Phone</h5>
+                <p>+44 20 8912 3456</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <h5>Email</h5>
+                <p>support@brisk.trade</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <h5>Address</h5>
+                <p>72 Great Eastern St, London EC2A 3HU</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <h5>Business Hours</h5>
+                <p>Mon - Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 2:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Modern Contact Form -->
+        <div class="contact-form-card">
+          <span class="section-label"
+            style="background: rgba(12, 196, 90, 0.05); border-color: rgba(12, 196, 90, 0.12); color: #0cc45a;">Enquiry
+            form</span>
+          <h3 style="margin-top: 12px; margin-bottom: 24px;">Send a Message</h3>
+
+          <form id="contactForm"
+            onsubmit="event.preventDefault(); alert('Thank you for contacting BRISK. Our team will get back to you soon!');">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" class="form-control" placeholder="+44 7123 456789">
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" class="form-control" placeholder="Job Enquiry" required>
+              </div>
+              <div class="form-group form-group-full">
+                <label for="message">Message</label>
+                <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: SUPPORT OPTIONS ===== -->
+  <section class="section" id="help-desks" style="background: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Help Desks</span>
+        <h2>Dedicated Support <span class="gradient-text">Channels</span></h2>
+        <p>Whether you are a customer hiring help or a professional trader on our network, we have custom teams ready.
+        </p>
+      </div>
+
+      <div class="support-grid reveal reveal-d2">
+        <div class="support-card">
+          <h4>Customer Support</h4>
+          <p>Need help publishing a job, tracking a project, or reviewing an invoice? Our customer care specialists are
+            available 24/7.</p>
+          <a href="#" class="support-card-link">Contact Support →</a>
+        </div>
+        <div class="support-card">
+          <h4>Trader Support</h4>
+          <p>Facing credential verification issues, or queries about active bids and payouts? Get quick resolutions from
+            our relations desk.</p>
+          <a href="#" class="support-card-link">Trader Desk →</a>
+        </div>
+        <div class="support-card">
+          <h4>Partnerships</h4>
+          <p>Interested in integrating with BRISK marketplace APIs or building enterprise-level alliances? Speak to our
+            corporate team.</p>
+          <a href="#" class="support-card-link">Partner Hub →</a>
+        </div>
+        <div class="support-card">
+          <h4>General Enquiries</h4>
+          <p>For marketing queries, job openings, feedback reports, or media relation questions, please drop us a
+            message.</p>
+          <a href="#" class="support-card-link">General Care →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: MAP SECTION ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Find Us</span>
+        <h2>Our Headquarters <span class="gradient-text">Location</span></h2>
+        <p>Located in the heart of London's East End technology cluster.</p>
+      </div>
+
+      <div class="map-card-wrapper reveal reveal-d2">
+        <div class="map-placeholder">
+          <!-- Animated Roads -->
+          <div class="map-road map-road-1"></div>
+          <div class="map-road map-road-2"></div>
+          <div class="map-road map-road-3"></div>
+
+          <!-- Marker -->
+          <div class="map-pin">
+            <div class="map-pin-card">BRISK HQ, London</div>
+            <div class="map-pin-pulse">
+              <div class="map-pin-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index-v2.html" class="footer-logo">
+            <img src="image/white.png" alt="BRISK">
+          </a>
+          <p>A trust-first, negotiation-driven marketplace connecting customers with verified local service providers.
+          </p>
+          <br>
+          <div class="footer-socials ">
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+              </svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index-v2.html">Home 2</a></li>
+            <li><a href="customers.html">For Customer</a></li>
+            <li><a href="traders.html">For Trader</a></li>
+            <li><a href="blog.html">Blog & Insights</a></li>
+            <li><a href="help-desk.html">Help Desk</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="customers.html#post-job">Post A Job</a></li>
+            <li><a href="traders.html#browse-jobs">Browse Traders</a></li>
+            <li><a href="index-v2.html#flow">Marketplace Flow</a></li>
+            <li><a href="help-desk.html#trader-verification">Trust & Safety</a></li>
+            <li><a href="help-desk.html#escrow-protection">Escrow Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="help-desk.html">Help Centre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 BRISK. All rights reserved.</p>
+
+      </div>
+    </div>
+  </footer>
+  <!-- ===== QR CODE MODAL ===== -->
+  <div class="qr-modal-overlay" id="qrModalOverlay" aria-hidden="true">
+    <div class="qr-modal-card" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+      <button type="button" class="qr-modal-close" id="qrModalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="qr-modal-header">
+        <h3 class="qr-modal-title" id="qrModalTitle">Customer App Download</h3>
+        <p class="qr-modal-subtitle">Scan the QR code to download the app.</p>
+      </div>
+      <div class="qr-cards-grid">
+        <!-- App Store Card -->
+        <div class="qr-app-card">
+          <div class="qr-card-header">
+            <svg class="qr-app-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.66-.8 1.11-1.92.99-3.04-.96.04-2.13.64-2.82 1.44-.61.71-1.14 1.86-.99 2.97 1.07.08 2.16-.56 2.82-1.37z" />
+            </svg>
+            <span class="qr-card-title">App Store</span>
+          </div>
+          <div class="qr-image-wrapper">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-customer"
+              id="appStoreQrImg" alt="App Store QR Code">
+          </div>
+        </div>
+        <!-- Google Play Card -->
+        <div class="qr-app-card">
+          <div class="qr-card-header">
+            <svg class="qr-app-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.31 0 .61.09.86.26l14.1 8.5c.67.4 1.04 1.13 1.04 1.89s-.37 1.49-1.04 1.89l-14.1 8.5c-.25.17-.55.26-.86.26-.83 0-1.5-.67-1.5-1.5z" />
+            </svg>
+            <span class="qr-card-title">Google Play</span>
+          </div>
+          <div class="qr-image-wrapper">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.customer"
+              id="googlePlayQrImg" alt="Google Play QR Code">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // QR Code Dropdown Popover & Modal Logic
+    document.addEventListener('DOMContentLoaded', function () {
+      const qrDropdownBtn = document.getElementById('qrDropdownBtn');
+      const qrPopover = document.getElementById('qrPopover');
+      const qrModalOverlay = document.getElementById('qrModalOverlay');
+      const qrModalClose = document.getElementById('qrModalClose');
+      const qrModalTitle = document.getElementById('qrModalTitle');
+      const appStoreQrImg = document.getElementById('appStoreQrImg');
+      const googlePlayQrImg = document.getElementById('googlePlayQrImg');
+
+      if (!qrDropdownBtn || !qrPopover || !qrModalOverlay) return;
+
+      // Toggle Popover
+      qrDropdownBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        qrPopover.classList.toggle('active');
+      });
+
+      // Close Popover when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!qrPopover.contains(e.target) && !qrDropdownBtn.contains(e.target)) {
+          qrPopover.classList.remove('active');
+        }
+      });
+
+      // Handle Option Selection
+      const popoverItems = qrPopover.querySelectorAll('.qrcode-popover-item');
+      popoverItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          const type = this.getAttribute('data-type');
+
+          if (type === 'trader') {
+            qrModalTitle.textContent = 'Trader App Download';
+            appStoreQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-trader';
+            googlePlayQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.trader';
+          } else {
+            qrModalTitle.textContent = 'Customer App Download';
+            appStoreQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-customer';
+            googlePlayQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.customer';
+          }
+
+          qrPopover.classList.remove('active');
+          openModal();
+        });
+      });
+
+      function openModal() {
+        qrModalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        qrModalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (qrModalClose) {
+        qrModalClose.addEventListener('click', closeModal);
+      }
+
+      qrModalOverlay.addEventListener('click', function (e) {
+        if (e.target === qrModalOverlay) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && qrModalOverlay.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+  <script>
+    // ===== Sticky Header =====
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // ===== Mobile Nav Toggle =====
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navActions = document.getElementById('navActions');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      navActions.classList.toggle('active');
+    });
+
+    // ===== Scroll Reveal =====
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+
+</html>
