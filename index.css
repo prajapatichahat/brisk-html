@@ -5955,3 +5955,401 @@ textarea.form-control {
     justify-content: center;
   }
 }
+
+/* ===== HELP DESK PAGE STYLES ===== */
+.help-desk-page .help-desk-hero {
+  padding: 120px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #F4FAF6 0%, #FFFFFF 100%);
+}
+
+.help-desk-page .help-desk-hero h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--dark, #0B192C);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.help-desk-page .help-desk-hero p {
+  font-size: 1.125rem;
+  color: var(--text-light, #64748B);
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+/* Sticky Scroll Container */
+.help-desk-page .sticky-scroll-section {
+  padding: 60px 0 100px;
+  position: relative;
+}
+
+.help-desk-page .sticky-layout {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Left Navigation Sidebar (30%) */
+.help-desk-page .sticky-sidebar {
+  flex: 0 0 30%;
+  width: 30%;
+  position: sticky;
+  top: 100px;
+  /* Sticky offset accounting for fixed header */
+  z-index: 10;
+  transition: top 0.3s ease;
+}
+
+.help-desk-page .sticky-menu-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-light, #E2E8F0);
+}
+
+.help-desk-page .sticky-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.help-desk-page .sticky-menu-link {
+  display: block;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark, #1E293B);
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.help-desk-page .sticky-menu-link:hover {
+  background: var(--primary-bg, #E8F5E9);
+  color: var(--primary, #098642);
+  transform: translateX(4px);
+}
+
+.help-desk-page .sticky-menu-link.active {
+  background: var(--primary, #098642);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(9, 134, 66, 0.3);
+  transform: translateX(0);
+}
+
+/* Promotional CTA Card under Left Menu */
+.help-desk-page .promo-card {
+  margin-top: 24px;
+  background: linear-gradient(135deg, #F4FAF6 0%, #E8F5E9 100%);
+  border: 1px solid var(--primary-border, #C8E6C9);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.help-desk-page .promo-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0B192C;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.help-desk-page .promo-card .btn-promo {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 20px;
+  background: var(--primary, #098642);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  border: none;
+}
+
+.help-desk-page .promo-card .btn-promo:hover {
+  background: var(--primary-dark, #076a34);
+  transform: translateY(-2px);
+}
+
+/* Right Content Wrapper (70%) */
+.help-desk-page .sticky-content {
+  flex: 0 0 70%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  /* Spacing between 80-100px */
+}
+
+/* Content Section Item */
+.help-desk-page .content-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+  scroll-margin-top: 110px;
+  /* Offset for smooth scroll */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* First section is visible immediately on page load */
+.help-desk-page .content-section:first-of-type,
+.help-desk-page .content-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.help-desk-page .section-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.help-desk-page .content-section h2 {
+  font-size: 2.125rem;
+  font-weight: 800;
+  color: var(--dark, #0B192C);
+  margin-bottom: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.help-desk-page .content-section p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-light, #475569);
+  margin: 0;
+}
+
+.help-desk-page .section-image-col {
+  position: relative;
+}
+
+.help-desk-page .section-image-card {
+  background: #F8FAFC;
+  border-radius: 24px;
+  padding: 16px;
+  border: 1px solid var(--border-light, #E2E8F0);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-desk-page .section-image-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.help-desk-page .content-section.in-view .section-image-card img {
+  transform: scale(1.03);
+}
+
+/* Tablet & Responsive Media Queries */
+@media (max-width: 991px) {
+  .help-desk-page .sticky-layout {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .help-desk-page .sticky-sidebar {
+    flex: 0 0 100%;
+    width: 100%;
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+  }
+
+  .help-desk-page .sticky-menu-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  /* Horizontal Scrollable Tabs on Mobile/Tablet */
+  .help-desk-page .sticky-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .help-desk-page .sticky-menu::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+  }
+
+  .help-desk-page .sticky-menu-link {
+    padding: 10px 16px;
+    font-size: 0.875rem;
+  }
+
+  .help-desk-page .sticky-menu-link:hover {
+    transform: none;
+  }
+
+  .help-desk-page .promo-card {
+    display: none;
+    /* Hide promo card on tablet/mobile left nav to preserve space */
+  }
+
+  .help-desk-page .sticky-content {
+    flex: 0 0 100%;
+    width: 100%;
+    gap: 60px;
+  }
+
+  .help-desk-page .content-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .help-desk-page .section-image-card img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 576px) {
+  .help-desk-page .help-desk-hero {
+    padding: 90px 0 40px;
+  }
+
+  .help-desk-page .help-desk-hero h1 {
+    font-size: 1.85rem;
+  }
+
+  .help-desk-page .help-desk-hero p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .help-desk-page .sticky-scroll-section {
+    padding: 30px 0 60px;
+  }
+
+  .help-desk-page .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .help-desk-page .content-section p {
+    font-size: 0.95rem;
+  }
+
+  .help-desk-page .section-image-card {
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .help-desk-page .section-image-card img {
+    height: 200px;
+    border-radius: 12px;
+  }
+}
+
+/* ===== 404 ERROR PAGE STYLES ===== */
+.error-page-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, rgba(9, 134, 66, 0.04) 0%, rgba(250, 252, 251, 1) 70%);
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  z-index: 2;
+  position: relative;
+}
+
+.error-code {
+  font-size: clamp(6rem, 15vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--primary, #098642) 0%, var(--primary-light, #0a9a4c) 50%, var(--dark, #111111) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.05em;
+  position: relative;
+  display: inline-block;
+}
+
+.error-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--dark, #111111);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.error-text {
+  font-size: 1.125rem;
+  color: var(--text-light, #6B7280);
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Background floating elements */
+.error-bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.error-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.error-shape-1 {
+  top: 10%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background: var(--primary, #098642);
+}
+
+.error-shape-2 {
+  bottom: 10%;
+  right: 15%;
+  width: 400px;
+  height: 400px;
+  background: rgba(9, 134, 66, 0.8);
+}

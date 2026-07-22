@@ -1,332 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Help Desk & Knowledge Base — BRISK</title>
-  <meta name="description"
-    content="Explore BRISK Help Desk & Knowledge Base to understand local trade dynamics, economy overview, industry insights, and support systems.">
-
-  <!-- Fonts & Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="index.css">
-
-  <style>
-    /* Help Desk Specific Sticky Scroll Section Styles */
-    .help-desk-hero {
-      padding: 120px 0 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, #F4FAF6 0%, #FFFFFF 100%);
-    }
-
-    .help-desk-hero h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      color: var(--dark, #0B192C);
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .help-desk-hero p {
-      font-size: 1.125rem;
-      color: var(--text-light, #64748B);
-      max-width: 640px;
-      margin: 0 auto 32px;
-    }
-
-    /* Sticky Scroll Container */
-    .sticky-scroll-section {
-      padding: 60px 0 100px;
-      position: relative;
-    }
-
-    .sticky-layout {
-      display: flex;
-      gap: 48px;
-      align-items: flex-start;
-      position: relative;
-    }
-
-    /* Left Navigation Sidebar (30%) */
-    .sticky-sidebar {
-      flex: 0 0 30%;
-      width: 30%;
-      position: sticky;
-      top: 100px;
-      /* Sticky offset accounting for fixed header */
-      z-index: 10;
-      transition: top 0.3s ease;
-    }
-
-    .sticky-menu-card {
-      background: #FFFFFF;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
-      border: 1px solid var(--border-light, #E2E8F0);
-    }
-
-    .sticky-menu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .sticky-menu-link {
-      display: block;
-      padding: 14px 20px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--dark, #1E293B);
-      text-decoration: none;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-
-    .sticky-menu-link:hover {
-      background: var(--primary-bg, #E8F5E9);
-      color: var(--primary, #098642);
-      transform: translateX(4px);
-    }
-
-    .sticky-menu-link.active {
-      background: var(--primary, #098642);
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(9, 134, 66, 0.3);
-      transform: translateX(0);
-    }
-
-    /* Promotional CTA Card under Left Menu */
-    .promo-card {
-      margin-top: 24px;
-      background: linear-gradient(135deg, #F4FAF6 0%, #E8F5E9 100%);
-      border: 1px solid var(--primary-border, #C8E6C9);
-      border-radius: 16px;
-      padding: 24px 20px;
-      text-align: center;
-    }
-
-    .promo-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #0B192C;
-      margin-bottom: 16px;
-      line-height: 1.4;
-    }
-
-    .promo-card .btn-promo {
-      display: inline-block;
-      width: 100%;
-      padding: 12px 20px;
-      background: var(--primary, #098642);
-      color: #FFFFFF;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
-      border: none;
-    }
-
-    .promo-card .btn-promo:hover {
-      background: var(--primary-dark, #076a34);
-      transform: translateY(-2px);
-    }
-
-    /* Right Content Wrapper (70%) */
-    .sticky-content {
-      flex: 0 0 70%;
-      width: 70%;
-      display: flex;
-      flex-direction: column;
-      gap: 90px;
-      /* Spacing between 80-100px */
-    }
-
-    /* Content Section Item */
-    .content-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      align-items: center;
-      scroll-margin-top: 110px;
-      /* Offset for smooth scroll */
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-
-    /* First section is visible immediately on page load */
-    .content-section:first-of-type,
-    .content-section.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section-text-col {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .content-section h2 {
-      font-size: 2.125rem;
-      font-weight: 800;
-      color: var(--dark, #0B192C);
-      margin-bottom: 18px;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-    }
-
-    .content-section p {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: var(--text-light, #475569);
-      margin: 0;
-    }
-
-    .section-image-col {
-      position: relative;
-    }
-
-    .section-image-card {
-      background: #F8FAFC;
-      border-radius: 24px;
-      padding: 16px;
-      border: 1px solid var(--border-light, #E2E8F0);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .section-image-card img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 16px;
-      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    .content-section.in-view .section-image-card img {
-      transform: scale(1.03);
-    }
-
-    /* Tablet & Responsive Media Queries */
-    @media (max-width: 991px) {
-      .sticky-layout {
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      .sticky-sidebar {
-        flex: 0 0 100%;
-        width: 100%;
-        position: sticky;
-        top: 70px;
-        z-index: 100;
-      }
-
-      .sticky-menu-card {
-        padding: 12px;
-        border-radius: 12px;
-      }
-
-      /* Horizontal Scrollable Tabs on Mobile/Tablet */
-      .sticky-menu {
-        flex-direction: row;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 4px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        /* Firefox */
-      }
-
-      .sticky-menu::-webkit-scrollbar {
-        display: none;
-        /* Chrome/Safari */
-      }
-
-      .sticky-menu-link {
-        padding: 10px 16px;
-        font-size: 0.875rem;
-      }
-
-      .sticky-menu-link:hover {
-        transform: none;
-      }
-
-      .promo-card {
-        display: none;
-        /* Hide promo card on tablet/mobile left nav to preserve space */
-      }
-
-      .sticky-content {
-        flex: 0 0 100%;
-        width: 100%;
-        gap: 60px;
-      }
-
-      .content-section {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .section-image-card img {
-        height: 260px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .help-desk-hero {
-        padding: 90px 0 40px;
-      }
-
-      .help-desk-hero h1 {
-        font-size: 1.85rem;
-      }
-
-      .help-desk-hero p {
-        font-size: 0.95rem;
-        margin-bottom: 20px;
-      }
-
-      .sticky-scroll-section {
-        padding: 30px 0 60px;
-      }
-
-      .content-section h2 {
-        font-size: 1.5rem;
-      }
-
-      .content-section p {
-        font-size: 0.95rem;
-      }
-
-      .section-image-card {
-        padding: 10px;
-        border-radius: 16px;
-      }
-
-      .section-image-card img {
-        height: 200px;
-        border-radius: 12px;
-      }
-    }
-  </style>
-</head>
 
 <body>
 
@@ -376,163 +50,170 @@
     </div>
   </header>
 
-  <!-- ===== HELP DESK HERO ===== -->
-  <section class="help-desk-hero">
-    <div class="glow-bg glow-bg-primary hero-glow-1"></div>
-    <div class="container">
-      <h1>Help Desk & <span class="gradient-text">Platform Guides</span></h1>
-      <p>Everything you need to know about posting jobs, negotiating quotes, securing payments, and building trust on
-        BRISK.</p>
-    </div>
-  </section>
+  <!-- ===== HELP DESK PAGE WRAPPER ===== -->
+  <div class="help-desk-page">
 
-  <!-- ===== STICKY SCROLL SECTION ===== -->
-  <section class="sticky-scroll-section">
-    <div class="container">
-      <div class="sticky-layout">
-
-        <!-- Left Navigation (30%) -->
-        <aside class="sticky-sidebar" aria-label="Help Desk Navigation">
-          <div class="sticky-menu-card">
-            <ul class="sticky-menu" id="stickyNav" role="tablist">
-              <li>
-                <a href="#how-brisk-works" class="sticky-menu-link active" data-target="how-brisk-works"
-                  aria-current="true" role="tab">
-                  How BRISK Works
-                </a>
-              </li>
-              <li>
-                <a href="#trader-verification" class="sticky-menu-link" data-target="trader-verification"
-                  aria-current="false" role="tab">
-                  Trader Verification
-                </a>
-              </li>
-              <li>
-                <a href="#smart-milestones" class="sticky-menu-link" data-target="smart-milestones" aria-current="false"
-                  role="tab">
-                  Smart Milestones
-                </a>
-              </li>
-              <li>
-                <a href="#escrow-protection" class="sticky-menu-link" data-target="escrow-protection"
-                  aria-current="false" role="tab">
-                  Escrow Protection
-                </a>
-              </li>
-              <li>
-                <a href="#dispute-resolution" class="sticky-menu-link" data-target="dispute-resolution"
-                  aria-current="false" role="tab">
-                  Dispute Resolution
-                </a>
-              </li>
-              <li>
-                <a href="#trader-growth-hub" class="sticky-menu-link" data-target="trader-growth-hub"
-                  aria-current="false" role="tab">
-                  Trader Growth Hub
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Promo Card -->
-          <div class="promo-card">
-            <h4>Ready to experience effortless local trade?</h4>
-            <a href="contact.html" class="btn-promo">Get Started Today</a>
-          </div>
-        </aside>
-
-        <!-- Right Content Area (70%) -->
-        <main class="sticky-content">
-
-          <!-- 1. How BRISK Works -->
-          <section id="how-brisk-works" class="content-section" aria-labelledby="heading-how-brisk-works">
-            <div class="section-text-col">
-              <h2 id="heading-how-brisk-works">How BRISK Works</h2>
-              <p>BRISK simplifies local services into a transparent 6-step flow. Customers post job requirements with
-                photos and timeline, while verified local traders send tailored offers and negotiate scope seamlessly
-                within the platform.</p>
-            </div>
-            <div class="section-image-col">
-              <div class="section-image-card">
-                <img src="image/Home.png" alt="BRISK Marketplace Flow Overview">
-              </div>
-            </div>
-          </section>
-
-          <!-- 2. Trader Verification -->
-          <section id="trader-verification" class="content-section" aria-labelledby="heading-trader-verification">
-            <div class="section-text-col">
-              <h2 id="heading-trader-verification">Trader Verification</h2>
-              <p>Trust starts with verified credentials. Every trade professional on BRISK undergoes identity
-                verification, business licensing checks, and insurance audits before bidding on customer jobs.</p>
-            </div>
-            <div class="section-image-col">
-              <div class="section-image-card">
-                <img src="image/trader_dashboard.png" alt="BRISK Trader Dashboard & Badges">
-              </div>
-            </div>
-          </section>
-
-          <!-- 3. Smart Milestones -->
-          <section id="smart-milestones" class="content-section" aria-labelledby="heading-smart-milestones">
-            <div class="section-text-col">
-              <h2 id="heading-smart-milestones">Smart Milestones</h2>
-              <p>Break complex jobs into clear, manageable milestone deliverables. Funds are agreed upfront and released
-                only when work phases are completed and verified by the customer.</p>
-            </div>
-            <div class="section-image-col">
-              <div class="section-image-card">
-                <img src="image/customer_dashboard.png" alt="BRISK Customer Dashboard & Milestones">
-              </div>
-            </div>
-          </section>
-
-          <!-- 4. Escrow Protection -->
-          <section id="escrow-protection" class="content-section" aria-labelledby="heading-escrow-protection">
-            <div class="section-text-col">
-              <h2 id="heading-escrow-protection">Escrow Payment Security</h2>
-              <p>Protect your capital with BRISK Escrow. Customers know their money is safe until work meets agreed
-                standards, and traders get guaranteed payout certainty upon job completion.</p>
-            </div>
-            <div class="section-image-col">
-              <div class="section-image-card">
-                <img src="image/Frame.png" alt="BRISK Secure Escrow System">
-              </div>
-            </div>
-          </section>
-
-          <!-- 5. Dispute Resolution -->
-          <section id="dispute-resolution" class="content-section" aria-labelledby="heading-dispute-resolution">
-            <div class="section-text-col">
-              <h2 id="heading-dispute-resolution">Dispute Resolution</h2>
-              <p>Our dedicated resolution desk steps in whenever scope or quality disagreements arise. With complete
-                audit trails of messages and milestones, fair resolutions are reached quickly.</p>
-            </div>
-            <div class="section-image-col">
-              <div class="section-image-card">
-                <img src="image/blog.png" alt="BRISK Support & Dispute Resolution">
-              </div>
-            </div>
-          </section>
-
-          <!-- 6. Trader Growth Hub -->
-          <section id="trader-growth-hub" class="content-section" aria-labelledby="heading-trader-growth-hub">
-            <div class="section-text-col">
-              <h2 id="heading-trader-growth-hub">Trader Growth Hub</h2>
-              <p>Expand your business with automated lead matching, instant client messaging, electronic invoicing, and
-                performance analytics to build a top-rated reputation in your local community.</p>
-            </div>
-            <div class="section-image-col">
-              <div class="section-image-card">
-                <img src="image/Home.png" alt="BRISK Trader Growth Tools">
-              </div>
-            </div>
-          </section>
-
-        </main>
+    <!-- ===== HELP DESK HERO ===== -->
+    <section class="help-desk-hero">
+      <div class="glow-bg glow-bg-primary hero-glow-1"></div>
+      <div class="container">
+        <h1>Help Desk & <span class="gradient-text">Platform Guides</span></h1>
+        <p>Everything you need to know about posting jobs, negotiating quotes, securing payments, and building trust on
+          BRISK.</p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ===== STICKY SCROLL SECTION ===== -->
+    <section class="sticky-scroll-section">
+      <div class="container">
+        <div class="sticky-layout">
+
+          <!-- Left Navigation (30%) -->
+          <aside class="sticky-sidebar" aria-label="Help Desk Navigation">
+            <div class="sticky-menu-card">
+              <ul class="sticky-menu" id="stickyNav" role="tablist">
+                <li>
+                  <a href="#how-brisk-works" class="sticky-menu-link active" data-target="how-brisk-works"
+                    aria-current="true" role="tab">
+                    How BRISK Works
+                  </a>
+                </li>
+                <li>
+                  <a href="#trader-verification" class="sticky-menu-link" data-target="trader-verification"
+                    aria-current="false" role="tab">
+                    Trader Verification
+                  </a>
+                </li>
+                <li>
+                  <a href="#smart-milestones" class="sticky-menu-link" data-target="smart-milestones"
+                    aria-current="false" role="tab">
+                    Smart Milestones
+                  </a>
+                </li>
+                <li>
+                  <a href="#escrow-protection" class="sticky-menu-link" data-target="escrow-protection"
+                    aria-current="false" role="tab">
+                    Escrow Protection
+                  </a>
+                </li>
+                <li>
+                  <a href="#dispute-resolution" class="sticky-menu-link" data-target="dispute-resolution"
+                    aria-current="false" role="tab">
+                    Dispute Resolution
+                  </a>
+                </li>
+                <li>
+                  <a href="#trader-growth-hub" class="sticky-menu-link" data-target="trader-growth-hub"
+                    aria-current="false" role="tab">
+                    Trader Growth Hub
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Promo Card -->
+            <div class="promo-card">
+              <h4>Ready to experience effortless local trade?</h4>
+              <a href="contact.html" class="btn-promo">Get Started Today</a>
+            </div>
+          </aside>
+
+          <!-- Right Content Area (70%) -->
+          <main class="sticky-content">
+
+            <!-- 1. How BRISK Works -->
+            <section id="how-brisk-works" class="content-section" aria-labelledby="heading-how-brisk-works">
+              <div class="section-text-col">
+                <h2 id="heading-how-brisk-works">How BRISK Works</h2>
+                <p>BRISK simplifies local services into a transparent 6-step flow. Customers post job requirements with
+                  photos and timeline, while verified local traders send tailored offers and negotiate scope seamlessly
+                  within the platform.</p>
+              </div>
+              <div class="section-image-col">
+                <div class="section-image-card">
+                  <img src="image/Home.png" alt="BRISK Marketplace Flow Overview">
+                </div>
+              </div>
+            </section>
+
+            <!-- 2. Trader Verification -->
+            <section id="trader-verification" class="content-section" aria-labelledby="heading-trader-verification">
+              <div class="section-text-col">
+                <h2 id="heading-trader-verification">Trader Verification</h2>
+                <p>Trust starts with verified credentials. Every trade professional on BRISK undergoes identity
+                  verification, business licensing checks, and insurance audits before bidding on customer jobs.</p>
+              </div>
+              <div class="section-image-col">
+                <div class="section-image-card">
+                  <img src="image/trader_dashboard.png" alt="BRISK Trader Dashboard & Badges">
+                </div>
+              </div>
+            </section>
+
+            <!-- 3. Smart Milestones -->
+            <section id="smart-milestones" class="content-section" aria-labelledby="heading-smart-milestones">
+              <div class="section-text-col">
+                <h2 id="heading-smart-milestones">Smart Milestones</h2>
+                <p>Break complex jobs into clear, manageable milestone deliverables. Funds are agreed upfront and
+                  released
+                  only when work phases are completed and verified by the customer.</p>
+              </div>
+              <div class="section-image-col">
+                <div class="section-image-card">
+                  <img src="image/customer_dashboard.png" alt="BRISK Customer Dashboard & Milestones">
+                </div>
+              </div>
+            </section>
+
+            <!-- 4. Escrow Protection -->
+            <section id="escrow-protection" class="content-section" aria-labelledby="heading-escrow-protection">
+              <div class="section-text-col">
+                <h2 id="heading-escrow-protection">Escrow Payment Security</h2>
+                <p>Protect your capital with BRISK Escrow. Customers know their money is safe until work meets agreed
+                  standards, and traders get guaranteed payout certainty upon job completion.</p>
+              </div>
+              <div class="section-image-col">
+                <div class="section-image-card">
+                  <img src="image/Frame.png" alt="BRISK Secure Escrow System">
+                </div>
+              </div>
+            </section>
+
+            <!-- 5. Dispute Resolution -->
+            <section id="dispute-resolution" class="content-section" aria-labelledby="heading-dispute-resolution">
+              <div class="section-text-col">
+                <h2 id="heading-dispute-resolution">Dispute Resolution</h2>
+                <p>Our dedicated resolution desk steps in whenever scope or quality disagreements arise. With complete
+                  audit trails of messages and milestones, fair resolutions are reached quickly.</p>
+              </div>
+              <div class="section-image-col">
+                <div class="section-image-card">
+                  <img src="image/blog.png" alt="BRISK Support & Dispute Resolution">
+                </div>
+              </div>
+            </section>
+
+            <!-- 6. Trader Growth Hub -->
+            <section id="trader-growth-hub" class="content-section" aria-labelledby="heading-trader-growth-hub">
+              <div class="section-text-col">
+                <h2 id="heading-trader-growth-hub">Trader Growth Hub</h2>
+                <p>Expand your business with automated lead matching, instant client messaging, electronic invoicing,
+                  and
+                  performance analytics to build a top-rated reputation in your local community.</p>
+              </div>
+              <div class="section-image-col">
+                <div class="section-image-card">
+                  <img src="image/Home.png" alt="BRISK Trader Growth Tools">
+                </div>
+              </div>
+            </section>
+
+          </main>
+        </div>
+      </div>
+    </section>
+
+  </div>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer" id="footer">

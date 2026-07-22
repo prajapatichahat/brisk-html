@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — BRISK</title>
+  <meta name="description"
+    content="The page you are looking for does not exist. Navigate back to the BRISK marketplace to find verified local service providers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav-logo">
+          <img src="image/dark-green.png" alt="BRISK">
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="customers.html">For Customer</a></li>
+          <li><a href="traders.html">For Trader</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="help-desk.html">Help Desk</a></li>
+        </ul>
+        <div class="nav-actions" id="navActions">
+          <a href="#" class="btn btn-primary btn-register">Register</a>
+          <div class="qrcode-dropdown-wrapper">
+            <a href="javascript:void(0)" class="btn btn-secondary btn-qrcode" id="qrDropdownBtn">QR Code</a>
+            <div class="qrcode-popover" id="qrPopover" aria-hidden="true">
+              <button type="button" class="qrcode-popover-item" data-type="customer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                For Customer
+              </button>
+              <button type="button" class="qrcode-popover-item" data-type="trader">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                For Trader
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== 404 MAIN CONTENT ===== -->
+  <main class="error-page-container">
+    <!-- Floating background decorative shapes -->
+    <div class="error-bg-shapes">
+      <div class="error-shape error-shape-1"></div>
+      <div class="error-shape error-shape-2"></div>
+    </div>
+
+    <div class="error-content container reveal">
+      <h1 class="error-code" style="margin-bottom: 0;">404</h1>
+      <h2 class="error-title">Oops! Page Not Found</h2>
+      <p class="error-text">
+        The page you are looking for doesn't exist or may have been moved.
+      </p>
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary">
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="image/white.png" alt="BRISK">
+          </a>
+          <p>A trust-first, negotiation-driven marketplace connecting customers with verified local service providers.</p>
+          <br>
+          <div class="footer-socials">
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+              </svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="customers.html">For Customer</a></li>
+            <li><a href="traders.html">For Trader</a></li>
+            <li><a href="blog.html">Blog & Insights</a></li>
+            <li><a href="help-desk.html">Help Desk</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="customers.html#post-job">Post A Job</a></li>
+            <li><a href="traders.html#browse-jobs">Browse Traders</a></li>
+            <li><a href="index.html#flow">Marketplace Flow</a></li>
+            <li><a href="help-desk.html#trader-verification">Trust & Safety</a></li>
+            <li><a href="help-desk.html#escrow-protection">Escrow Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="help-desk.html">Help Centre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 BRISK. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== QR CODE MODAL ===== -->
+  <div class="qr-modal-overlay" id="qrModalOverlay" aria-hidden="true">
+    <div class="qr-modal-card" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+      <button type="button" class="qr-modal-close" id="qrModalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="qr-modal-header">
+        <h3 class="qr-modal-title" id="qrModalTitle">Customer App Download</h3>
+        <p class="qr-modal-subtitle">Scan the QR code to download the app.</p>
+      </div>
+      <div class="qr-cards-grid">
+        <div class="qr-app-card">
+          <div class="qr-card-header">
+            <svg class="qr-app-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.66-.8 1.11-1.92.99-3.04-.96.04-2.13.64-2.82 1.44-.61.71-1.14 1.86-.99 2.97 1.07.08 2.16-.56 2.82-1.37z" />
+            </svg>
+            <span class="qr-card-title">App Store</span>
+          </div>
+          <div class="qr-image-wrapper">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-customer"
+              id="appStoreQrImg" alt="App Store QR Code">
+          </div>
+        </div>
+        <div class="qr-app-card">
+          <div class="qr-card-header">
+            <svg class="qr-app-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.31 0 .61.09.86.26l14.1 8.5c.67.4 1.04 1.13 1.04 1.89s-.37 1.49-1.04 1.89l-14.1 8.5c-.25.17-.55.26-.86.26-.83 0-1.5-.67-1.5-1.5z" />
+            </svg>
+            <span class="qr-card-title">Google Play</span>
+          </div>
+          <div class="qr-image-wrapper">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.customer"
+              id="googlePlayQrImg" alt="Google Play QR Code">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Reveal animation
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      reveals.forEach(el => observer.observe(el));
+
+      // Header scroll sticky behavior
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Mobile nav toggle
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          navToggle.classList.toggle('active');
+        });
+      }
+
+      // QR Popover & Modal Logic
+      const qrDropdownBtn = document.getElementById('qrDropdownBtn');
+      const qrPopover = document.getElementById('qrPopover');
+      const qrModalOverlay = document.getElementById('qrModalOverlay');
+      const qrModalClose = document.getElementById('qrModalClose');
+      const qrModalTitle = document.getElementById('qrModalTitle');
+      const appStoreQrImg = document.getElementById('appStoreQrImg');
+      const googlePlayQrImg = document.getElementById('googlePlayQrImg');
+
+      if (qrDropdownBtn && qrPopover && qrModalOverlay) {
+        qrDropdownBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          qrPopover.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!qrPopover.contains(e.target) && !qrDropdownBtn.contains(e.target)) {
+            qrPopover.classList.remove('active');
+          }
+        });
+
+        const popoverItems = qrPopover.querySelectorAll('.qrcode-popover-item');
+        popoverItems.forEach(item => {
+          item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const type = this.getAttribute('data-type');
+            if (type === 'trader') {
+              qrModalTitle.textContent = 'Trader App Download';
+              appStoreQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-trader';
+              googlePlayQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.trader';
+            } else {
+              qrModalTitle.textContent = 'Customer App Download';
+              appStoreQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://apps.apple.com/app/brisk-customer';
+              googlePlayQrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://play.google.com/store/apps/details?id=com.brisk.customer';
+            }
+            qrPopover.classList.remove('active');
+            openModal();
+          });
+        });
+
+        function openModal() {
+          qrModalOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+          qrModalOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+
+        if (qrModalClose) qrModalClose.addEventListener('click', closeModal);
+        qrModalOverlay.addEventListener('click', function (e) {
+          if (e.target === qrModalOverlay) closeModal();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && qrModalOverlay.classList.contains('active')) closeModal();
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
