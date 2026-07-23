@@ -782,200 +782,382 @@ p {
   }
 }
 
-/* ===== SECTION 2: MARKETPLACE FLOW ===== */
+/* ===== SECTION 2: CURVY ROADMAP MARKETPLACE FLOW ===== */
 .flow-section {
   background: var(--bg);
+  padding: 80px 0;
   overflow: hidden;
 }
 
-.flow-visual {
-  position: relative;
-  padding: 30px 0;
+.roadmap-block {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
-.flow-track {
+.roadmap-title-area {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.roadmap-title-area .flow-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.roadmap-title-area .flow-subheading {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.roadmap-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  /* padding: 0 40px; */
+  gap: 15px;
+  margin: 20px 0px -30px 0;
+  z-index: 10;
 }
 
-/* Animated path between avatars */
-.flow-path-container {
-  position: absolute;
-  top: 50%;
-  left: 60px;
-  right: 60px;
-  height: 2px;
-  transform: translateY(-50%);
-  z-index: 0;
-}
-
-.flow-path-bg {
-  width: 100%;
-  height: 100%;
-  background: var(--border);
-  border-radius: 1px;
-}
-
-.flow-path-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 60%;
-  background: linear-gradient(90deg, var(--primary), rgba(9, 134, 66, 0.3));
-  border-radius: 1px;
-  animation: flow-progress 4s ease-in-out infinite alternate;
-}
-
-@keyframes flow-progress {
-  0% {
-    width: 15%;
-  }
-
-  100% {
-    width: 85%;
-  }
-}
-
-/* Flow Avatars */
-.flow-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 4px;
-  z-index: 2;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.flow-avatar-circle {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+/* Start and End Cards styling */
+.roadmap-start-card,
+.roadmap-end-card {
   background: var(--white);
-  border: 2px solid var(--primary-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-md);
-}
-
-.flow-avatar-circle svg {
-  width: 24px;
-  height: 24px;
-  color: var(--primary);
-}
-
-.flow-avatar span {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--text);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Flow Stage Cards */
-.flow-stages {
-  display: flex;
-  gap: 12px;
-  z-index: 2;
-  position: relative;
-}
-
-.flow-stage {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 30px 20px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-  text-align: center;
-  transition: all var(--transition);
-  min-width: 175px;
-  position: relative;
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  gap: 10px;
+  width: 120px;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  transition: all var(--transition);
 }
 
-.flow-stage:hover {
-  box-shadow: var(--shadow-lg);
+.roadmap-start-card:hover,
+.roadmap-end-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
   border-color: var(--primary-border);
-  transform: translateY(-4px);
 }
 
-.flow-stage:hover {
-  border-color: var(--primary);
-  box-shadow: var(--shadow-glow), var(--shadow-lg);
-}
-
-.fs-icon-container {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-md);
+.start-icon-circle,
+.end-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   background: var(--primary-bg);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  transition: all var(--transition);
+  box-shadow: 0 4px 10px rgba(9, 134, 66, 0.1);
 }
 
-.flow-stage:hover .fs-icon-container,
-.flow-stage.active .fs-icon-container {
-  background: var(--primary);
-  color: var(--white);
-  box-shadow: var(--shadow-glow);
+.roadmap-end-card .end-icon-circle {
+  background: #e6f6ed;
 }
 
-.fs-icon-container svg {
-  width: 32px;
-  height: 32px;
-}
-
-.flow-stage .fs-num {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+.roadmap-start-card svg,
+.roadmap-end-card svg {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  background: var(--bg-alt);
-  color: var(--text-light);
-  font-size: 0.625rem;
+}
+
+.start-tag,
+.end-tag {
+  font-size: 0.72rem;
   font-weight: 700;
+  color: var(--text-light);
+}
+
+.roadmap-start-card .start-tag {
+  color: var(--text-light);
+}
+
+.roadmap-end-card .end-tag {
+  color: var(--primary-dark);
+}
+
+/* Curvy Road Track area */
+.roadmap-track {
+  position: relative;
+  flex: 1;
+  height: 110px;
+  /* Reduced height to flatten the road waves and make them extremely gentle */
+  display: flex;
+  align-items: center;
+}
+
+.road-svg {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  right: -20px;
+  width: calc(100% + 40px);
+  height: 100%;
+  z-index: 1;
+  overflow: visible;
+}
+
+.road-border-path {
+  stroke: var(--border);
+  stroke-width: 34px;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.road-main-path {
+  stroke: #4b5563;
+  /* Asphalt Gray */
+  stroke-width: 28px;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.road-dash-path {
+  stroke: var(--white);
+  stroke-width: 1.5px;
+  stroke-dasharray: 6 12;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.road-glow-path {
+  stroke: var(--primary-light);
+  stroke-width: 4px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 15 150;
+  animation: road-glow-move 8s linear infinite;
+  filter: drop-shadow(0 0 4px var(--primary));
+}
+
+@keyframes road-glow-move {
+  from {
+    stroke-dashoffset: 400;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Map Pins */
+.road-pins {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.road-pin {
+  position: absolute;
+  width: 34px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  top: 40%;
+}
+
+.road-pin::before {
+  content: '';
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50% 50% 50% 0;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  transform: rotate(-45deg);
+  top: 0;
+  left: 0;
+  z-index: 1;
   transition: all var(--transition);
 }
 
-.flow-stage:hover .fs-num {
-  background: var(--primary);
-  color: var(--white);
+.road-pin:hover::before {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  box-shadow: 0 0 10px rgba(9, 134, 66, 0.3);
 }
 
-.flow-stage h4 {
-  font-size: 1.15rem;
+.pin-badge {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-top: -6px;
+}
+
+/* Chevron overlays between pins */
+.pin-chevron {
+  position: absolute;
+  left: calc(100% + 15px);
+  top: 30%;
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+  animation: chevron-pulse 2s infinite ease-in-out;
+}
+
+.pin-chevron svg {
+  width: 14px;
+  height: 14px;
+}
+
+@keyframes chevron-pulse {
+
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateX(5px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Info Cards underneath roadmap */
+.roadmap-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 0px;
+  margin-left: 135px;
+  margin-right: 135px;
+}
+
+.roadmap-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: var(--primary-border);
+}
+
+.card-divider {
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  margin: 10px auto;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.roadmap-card:hover .card-divider {
+  width: 40px;
+}
+
+.card-icon-container {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #e6f6ed;
+  /* Light green tint matching image mockup */
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(9, 134, 66, 0.05);
+}
+
+.roadmap-card h4 {
+  font-size: 1rem;
   font-weight: 700;
   color: var(--dark);
   margin-bottom: 8px;
 }
 
-.flow-stage p {
-  font-size: 0.85rem;
+.roadmap-card p {
+  font-size: 0.78rem;
   color: var(--text-light);
-  margin-top: 0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Trust Info Bar at the Bottom */
+.roadmap-trust-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(9, 134, 66, 0.02);
+  border: 1px solid var(--primary-border);
+  padding: 24px 40px;
+  border-radius: var(--radius-xl);
+  margin-top: 60px;
+  gap: 30px;
+  box-shadow: var(--shadow-xs);
+}
+
+.trust-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.trust-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--primary-bg);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trust-icon-wrapper svg {
+  width: 20px;
+  height: 20px;
+}
+
+.trust-text-wrapper h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.trust-text-wrapper p {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.trust-bar-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
 }
 
 /* ===== SECTION 3: BENTO FEATURES ===== */
@@ -2675,19 +2857,51 @@ p {
     grid-template-columns: 1fr 1fr;
   }
 
-  .flow-track {
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
+  .roadmap-container {
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .flow-path-container {
+  .roadmap-container::-webkit-scrollbar {
     display: none;
   }
 
-  .flow-stages {
-    flex-wrap: wrap;
-    justify-content: center;
+  .roadmap-track {
+    width: 850px;
+    flex-shrink: 0;
+  }
+
+  .roadmap-cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px 0;
+    margin-left: 0;
+    margin-right: 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .roadmap-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .roadmap-card {
+    width: 200px;
+    flex-shrink: 0;
+  }
+
+  .roadmap-trust-bar {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .trust-bar-divider {
+    display: none;
   }
 
   .app-grid {
@@ -2866,39 +3080,7 @@ p {
     animation: float-3 7s ease-in-out infinite 0.2s;
   }
 
-  /* Flow carousel styles */
-  .flow-track {
-    padding: 0;
-  }
-
-  .flow-avatar {
-    display: none;
-  }
-
-  .flow-stages {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    padding: 20px 20px;
-    margin: 0 -20px;
-    scrollbar-width: none;
-  }
-
-  .flow-stages::-webkit-scrollbar {
-    display: none;
-  }
-
-  .flow-stage {
-    flex: 0 0 78%;
-    scroll-snap-align: center;
-    min-width: auto;
-    padding: 32px 24px;
-    box-sizing: border-box;
-  }
+  /* New flow styles already handle responsive layouts */
 
   .bento-grid {
     grid-template-columns: 1fr;
@@ -3034,11 +3216,7 @@ p {
     padding: 32px 24px;
   }
 
-  .flow-stage {
-    flex: 0 0 80%;
-    min-width: auto;
-    padding: 28px 20px;
-  }
+  /* Removed old flow stage styles */
 
   .ecosystem-diagram {
     height: 360px;
